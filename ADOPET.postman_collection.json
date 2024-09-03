@@ -1,0 +1,288 @@
+{
+	"info": {
+		"_postman_id": "e9941c88-b7eb-4fc7-92a6-057715a5c85f",
+		"name": "ADOPET",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "REFUGIO",
+			"item": [
+				{
+					"name": "Listar refugios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/refugios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"refugios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar refugio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Refugio ejemplo\",\n    \"telefono\": \"61977777777\",\n    \"email\": \"refugioejemplo@email.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/refugios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"refugios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar mascotas del refugio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/refugios/1/mascotas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"refugios",
+								"1",
+								"mascotas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar mascota del refugio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tipo\": \"PERRO\",\n    \"nombre\": \"bidu\",\n    \"raza\": \"SRD\",\n    \"edad\": 5,\n    \"color\": \"negro\",\n    \"peso\": 5.45\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/refugios/2/mascotas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"refugios",
+								"2",
+								"mascotas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ADOPCION",
+			"item": [
+				{
+					"name": "Solicitar adopcion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idMascota\": 1,\n    \"idTutor\": 1,\n    \"motivo\": \"Cualquier motivo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/adopciones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"adopciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Aprobar adopcion",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idAdopcion\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/adopciones/aprobar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"adopciones",
+								"aprobar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reprobar adopcion",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idAdopcion\": 1,\n    \"justificacion\": \"Cualquier justificacion\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/adocoes/reprobar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"adopciones",
+								"reprobar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MASCOTA",
+			"item": [
+				{
+					"name": "Listar mascotas disponibles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/mascotas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"mascotas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TUTOR",
+			"item": [
+				{
+					"name": "Registrar tutor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Fulano de Tal\",\n    \"telefono\": \"61900000000\",\n    \"email\": \"fulano@email.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/tutores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tutores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar tutor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"nombre\": \"Fulano da Tal 2\",\n    \"telefono\": \"61900000001\",\n    \"email\": \"fulano2@email.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/tutores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tutores"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
